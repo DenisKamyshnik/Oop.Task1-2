@@ -165,10 +165,10 @@ namespace OOP.Task1
             Console.WriteLine("Вычисляем площадь квадрата, введите сторону квадрата");
 
             Square test = new Square();
-            string A = Square.a;
+         //  string A = Square.a;
 
 
-            Console.WriteLine(A);
+         //   Console.WriteLine(A);
 
          
             Console.WriteLine("Вычисляем площадь круга, введите радиус");
