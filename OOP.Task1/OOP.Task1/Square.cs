@@ -5,22 +5,31 @@ namespace OOP.Task1
     public class Square
     {
         public double A { get; set; }          
-        private double S { get; set; } 
+      //  private double S { get; set; } 
 
-        InputAndValidation objinputAndValidation = new InputAndValidation();
-        public double Deagonal => objinputAndValidation.GetRoundedValue(A * Math.Sqrt(2));
+        public double Deagonal => InputAndValidation.GetRoundedValue(A * Math.Sqrt(2));
+
+        public double S => InputAndValidation.GetRoundedValue(A * A);
 
         public Square()  
         {
-            A = objinputAndValidation.Input();
-            SetSquareOfSquare();
+            A = InputAndValidation.GetInput();
+            //SetSquareOfSquare();
         }
 
-        private void SetSquareOfSquare() 
+   /*     private void SetSquareOfSquare() 
         {
             S = A * A;
-            S = Math.Round(S * 100.0) / 100.0;
+            S = Math.Round(S * 100.0) / 100.0;       
+        }*/
+
+        public void PrintSquareSide()
+        {
             Console.WriteLine("Сторона квадрата = " + A);
+        }
+
+        public void PrintSquareArea()
+        {
             Console.WriteLine("Площадь квадрата = " + S);
         }
 

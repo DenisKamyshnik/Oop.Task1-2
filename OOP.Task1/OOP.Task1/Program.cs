@@ -9,27 +9,35 @@ namespace OOP.Task1
         {
             Console.WriteLine("Вычисляем площадь квадрата, введите сторону квадрата");
 
-            Square objSquare = new Square();
+            Square square = new Square();
+
+            square.PrintSquareSide();
+
+            square.PrintSquareArea();
                    
             Console.WriteLine("Вычисляем площадь круга, введите радиус");
           
-            Circle objCircle = new Circle();
+            Circle circle = new Circle();
 
-            if (objCircle.Diametr <= objSquare.A)
+            circle.PrintRadius();
+
+            circle.PrintCircleArea();
+
+            if (circle.Diametr <= square.A)
             {
-                Console.WriteLine("Круг помещается в квадрат, так как его диаметр " + objCircle.Diametr + " меньше или равен стороны квадрата " + objSquare.A);
+                Console.WriteLine("\nКруг помещается в квадрат, так как его диаметр " + circle.Diametr + " меньше или равен стороны квадрата " + square.A);
             }
             else
             { 
-                Console.WriteLine("Круг не помещается в квадрат, так как его диаметр " + objCircle.Diametr + " больше стороны квадрата " + objSquare.A);
+                Console.WriteLine("\nКруг не помещается в квадрат, так как его диаметр " + circle.Diametr + " больше стороны квадрата " + square.A);
             }
-            if (objSquare.Deagonal <= objCircle.Diametr)
+            if (square.Deagonal <= circle.Diametr)
             {
-                Console.WriteLine("Квадрат помещается в круг, так как его диагональ " + objSquare.Deagonal + " меньше или равна диаметру круга " + objCircle.Diametr);
+                Console.WriteLine("\nКвадрат помещается в круг, так как его диагональ " + square.Deagonal + " меньше или равна диаметру круга " + circle.Diametr);
             }
             else
             {
-                Console.WriteLine("Квадрат не помещается в круг, так как его диагональ " + objSquare.Deagonal + " больше диаметра круга " + objCircle.Diametr);
+                Console.WriteLine("\nКвадрат не помещается в круг, так как его диагональ " + square.Deagonal + " больше диаметра круга " + circle.Diametr);
             }
 
             Console.ReadLine();

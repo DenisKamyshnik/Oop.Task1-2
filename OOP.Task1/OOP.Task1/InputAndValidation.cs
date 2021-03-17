@@ -1,29 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 
 namespace OOP.Task1
 {
-    class InputAndValidation
+    public static class InputAndValidation
     {
-       public double GetRoundedValue(double value)
+        public const int Tries = 3;
+        public static double GetRoundedValue(double value)
         {           
-            return value = Math.Round(value * 100.0) / 100.0;
+            return Math.Round(value * 100.0) / 100.0;
         }
 
-        public double GetRandomValue(double value)
+        public static  double GetRandomValue(double value)
         {
             Random rnd = new Random();
-            value = (rnd.NextDouble() * (5 - 0.5)) + 0.5;
-            return value;
+            return (rnd.NextDouble() * (5 - 0.5)) + 0.5; 
         }
 
-        public double Input()
+        public static double GetInput()
         {
            
             double inputResult = 0;
-            for (int i = 0; i <= 2; i++)
+            for (int i = 0; i <= Tries-1; i++)
             {         
                 String input = Console.ReadLine();
 
@@ -35,17 +33,16 @@ namespace OOP.Task1
                 {
                     System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("ru");
                 }
-
                 if (double.TryParse(input, out inputResult) && inputResult > 0)
                 {
                    inputResult = GetRoundedValue(inputResult);
                     break;
                 }
-                else if (i < 2)
+                else if (i < Tries-1)
                 {
                     Console.WriteLine("Повторите попытку, система принимает только значения типа int и double, например: 5,25 или 10");
                 }
-                if (i == 2)
+                if (i == Tries-1)
                 {
                     inputResult = GetRandomValue(inputResult);
                     inputResult = GetRoundedValue(inputResult);                   

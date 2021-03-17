@@ -6,22 +6,21 @@ namespace OOP.Task1
     {
         private const double PI = 3.14;
         public double R { get; set; } 
-        public double S { get; set; }
-
-        InputAndValidation objinputAndValidation = new InputAndValidation();
-        public double Diametr => objinputAndValidation.GetRoundedValue(R * 2);
+        public double Diametr => InputAndValidation.GetRoundedValue(R * 2);
+        public double S => InputAndValidation.GetRoundedValue((R * R) * PI);
 
         public Circle()
         {
-            R = objinputAndValidation.Input();
-            SetSquareCircle();
+            R = InputAndValidation.GetInput();
         }
-    
-        public void SetSquareCircle() 
+
+        public void PrintRadius()
         {
-            S = (R * R) * PI;
-            S = Math.Round(S * 100.0) / 100.0;
             Console.WriteLine("Радиус = " + R);
+        }
+
+        public void PrintCircleArea()
+        {
             Console.WriteLine("Площадь круга = " + S);
         }
 
